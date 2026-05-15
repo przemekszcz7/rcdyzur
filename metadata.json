@@ -1,0 +1,8 @@
+{
+  "name": "RC Dyżur - Naprawa modeli",
+  "description": "Profesjonalna naprawa modeli RC, diagnostyka usterek, tuning i odbudowy w Tucholi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

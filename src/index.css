@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-rajdhani: "Rajdhani", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+
+  --color-rc-bg: #080808;
+  --color-rc-bg-section: #111111;
+  --color-rc-bg-light: #1A1A1A;
+  --color-rc-bg-card: #161616;
+  --color-rc-red: #CC0000;
+  --color-rc-red-deep: #8B0000;
+  
+  --shadow-red-glow: 0 0 15px rgba(204, 0, 0, 0.25);
+  
+  --background-image-carbon: repeating-linear-gradient(
+    45deg,
+    #080808,
+    #080808 2px,
+    #111111 2px,
+    #111111 4px
+  );
+  
+  --background-image-scanlines: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.2) 2px,
+    rgba(0, 0, 0, 0.2) 3px
+  );
+}
+
+@layer base {
+  body {
+    @apply bg-rc-bg text-[#F0F0F0] font-rajdhani selection:bg-rc-red selection:text-white;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-rc-red uppercase tracking-wider mb-2 text-sm;
+  }
+  
+  .rc-card {
+    @apply bg-rc-bg-card border border-[#2A2A2A] border-l-4 border-l-rc-red p-6 transition-all duration-300 hover:border-rc-red hover:shadow-red-glow;
+  }
+  
+  .angled-split {
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  }
+  
+  .angled-split-reverse {
+    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .scanline-overlay {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 3px
+    );
+    pointer-events: none;
+  }
+}
